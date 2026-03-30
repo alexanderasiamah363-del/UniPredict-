@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniPredict | Your Journey Starts Here</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-ug">
+    <div class="background-overlay"></div>
+
+    <nav>
+        <div class="container flex-between">
+            <h1 id="logo">UniPredict</h1>
+            <div class="nav-links">
+                <a href="#" onclick="showSection('hero')">Home</a>
+                <a href="#" onclick="showSection('calculator')">Predictor</a>
+                <a href="#">Universities</a>
+                <a href="#">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="container hero-content flex-between">
+        <div class="cta-text">
+            <h2 class="cinematic-headline">
+                Predict Your Future.<br>
+                <span>Your Ghanaian University Journey Starts Here.</span>
+            </h2>
+            <button class="btn-primary" onclick="showSection('calculator')">Check My Eligibility Now</button>
+        </div>
+
+        <div class="prediction-preview glass">
+            <div class="status-ring"></div>
+            <p class="medal-probability">89% Chance</p>
+            <h4 class="medal-program">BSc. Computer Science</h4>
+            <p class="medal-school">KNUST</p>
+        </div>
+    </section>
+
+    <section id="calculator" class="container display-none">
+        <div class="glass-card main-calculator">
+            <h2 class="card-title">WASSCE RESULTS</h2>
+            
+            <div class="grade-section">
+                <h3>CORE:</h3>
+                <div class="grid-inputs">
+                    <select id="eng"><option value="1">English: A1</option><option value="2">B2</option><option value="3">B3</option><option value="4">C4</option></select>
+                    <select id="math"><option value="1">Maths: A1</option><option value="2">B2</option><option value="3">B3</option><option value="4">C4</option></select>
+                    <select id="soc"><option value="1">Social: A1</option><option value="2">B2</option></select>
+                    <select id="sci"><option value="1">Science: A1</option><option value="2">B2</option></select>
+                </div>
+            </div>
+
+            <div class="grade-section">
+                <h3>ELECTIVES:</h3>
+                <div class="grid-inputs">
+                    <select id="e1"><option value="1">Elective 1: A1</option><option value="2">B2</option></select>
+                    <select id="e2"><option value="1">Elective 2: A1</option><option value="2">B2</option></select>
+                    <select id="e3"><option value="1">Elective 3: A1</option><option value="2">B2</option></select>
+                </div>
+            </div>
+
+            <button class="btn-predict" onclick="runPrediction()">PREDICT MY CHANCES</button>
+        </div>
+
+        <div id="results-area" class="results-container"></div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
