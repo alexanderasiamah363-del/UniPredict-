@@ -1,0 +1,74 @@
+:root {
+    --bg-dark: #0F172A;
+    --teal: #006070;
+    --glow: #4ADE80;
+    --white: #F8FAFC;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--white);
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    transition: background-image 0.8s ease-in-out; /* Smooth swap */
+}
+
+/* Background Classes */
+.bg-ug { background-image: url('https://images.unsplash.com/photo-1541339907198-e08759dfc3ef?q=80&w=2000'); }
+.bg-knust { background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=2000'); }
+
+.background-overlay {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.5) 100%);
+    z-index: -1;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+.display-none { display: none; }
+
+/* Glassmorphism */
+.glass, .glass-card {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 30px;
+}
+
+.cinematic-headline { font-size: 3.5rem; font-weight: 900; line-height: 1.1; }
+.cinematic-headline span { font-size: 2rem; color: #94A3B8; font-weight: 400; }
+
+.btn-primary, .btn-predict {
+    background: var(--teal);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/* Prediction Result Cards */
+.result-match {
+    margin-top: 20px;
+    border-left: 5px solid var(--glow);
+    animation: fadeIn 0.5s ease;
+}
+
+.status-ring {
+    width: 50px; height: 50px;
+    border: 4px solid rgba(74, 222, 128, 0.2);
+    border-top: 4px solid var(--glow);
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
